@@ -10,15 +10,19 @@
   display: block;
   text-align: right;
 }
-.container .container__img {
+
+.container
+.container-img {
   width: 100%;
 }
-.container .more-inf {
+.container
+.more-inf {
   font-family: fantasy, cursive;
 }
 
 @media (max-width:768px) {
-  .container { text-align: center;
+  .container {
+    text-align: center;
   }
 }
 .main-container {
@@ -29,7 +33,7 @@
 .task {
   width: 56%;
   display: inline-block;
-  flex-grow: 1
+  flex-grow: 1;
 }
 .task-wrapper {
   display: flex;
@@ -43,7 +47,14 @@
 }
 .input,.btn{
   outline:none;
+  margin: 0;
+  padding: 0px;
 }
+.list-item,
+.heading {
+  list-style: none;
+}
+
 .btn {
   background: none;
   border: 0px;
@@ -57,8 +68,8 @@
   color: #3a3a3a;
 }
 /* Heading */
-.heading,
-.lbl-new-task {
+
+.lbl[for="new-task"] {
   color: #333;
   font-weight: 700;
   font-size: 15px;
@@ -84,7 +95,8 @@
 }
 
 /* New Task */
-.lbl-new-task {
+
+.lbl[for="new-task"] {
   display: block;
   margin: 0 0 20px;
 }
@@ -93,15 +105,16 @@
 }
 
 /* Task list */
-.list__item {
+
+.list-item {
   overflow: hidden;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .list__item > * {
   vertical-align: middle;
 }
@@ -109,7 +122,13 @@
 .list__item > .input[type="checkbox"] {
   margin: 0 10px;
 }
-.list__item > .label {
+
+.list-item > * {
+  vertical-align: middle;
+}
+
+
+.list-item > lbl {
   padding-left: 10px;
   box-sizing: border-box;
   font-size: 18px;
@@ -118,31 +137,44 @@
 .list__item >    input[type="text"] {
   width: 226px
 }
-.btn.delete .img {
+
+.list-item >    .input[type="text"] {
+  width: 226px;
+}
+.btn
+.delete
+.img {
   height: 2em;
   transform: rotateZ(45deg);
   transition: transform 200ms ease-in;
 }
-.btn.delete .img:hover {
+
+.img:hover {
   transform: rotateZ(0);
 }
 
-/* Completed */
-.list#completed-tasks .lbl {
-  text-decoration: line-through
+.list#completed-tasks
+.lbl {
+  text-decoration: line-through;
   color: #888;
 }
 
-/* Edit Task */
-.list .list__item .input[type=text] {
-  display:none
+.list.list-item
+.input[type=text] {
+  display: none;
 }
 
-.list .list__item.edit-mode .input[type=text] {
-  display:inline-block;
-  width:224px
+.list
+.list-item
+.edit-mode
+.input[type=text] {
+  display: inline-block;
+  width: 224px;
 }
 
-.list .list__item.edit-mode .lbl {
-  display:none;
+.list
+.list-item
+.edit-mode
+.lbl {
+  display: none;
 }
